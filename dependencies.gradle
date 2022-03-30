@@ -44,7 +44,7 @@ ext {
     lottieVersion = '3.3.1'
     materialVersion = '1.1.0'
     medalliaVersion = '3.5.0'
-    navigationVersion = '2.1.1'
+    navigationVersion = '2.4.1'
     okHttpVersion = '4.9.0'
     playServiceVisionVersion = '20.1.2'
     recyclerViewVersion = '1.0.0'

@@ -7,33 +7,33 @@ sealed class PinCertificates(val certificates: HashMap<String, String>) {
         certificates = hashMapOf(
             Pair(
                 WebServiceConfig.Domain.PROD,
-                "sha256/*="
+                "sha256//Z5PyRbsT4mtlJV3/q83bNgZVkr4spEYUZe8ymg2+Qs="
             ),
-            Pair(
-                WebServiceConfig.Domain.PROD,
-                "sha256/*="
-            ),
-            Pair(
-                WebServiceConfig.Domain.PROD,
-                "sha256/*="
-            )
+//            Pair(
+//                WebServiceConfig.Domain.PROD,
+//                "sha256/*="
+//            ),
+//            Pair(
+//                WebServiceConfig.Domain.PROD,
+//                "sha256/*="
+//            )
         )
     )
 
     object Dev : PinCertificates(
         certificates = hashMapOf(
-            Pair(
-                WebServiceConfig.Domain.DEV,
-                "sha256/*="
-            ),
-            Pair(
-                WebServiceConfig.Domain.DEV,
-                "sha256/*="
-            ),
-            Pair(
-                WebServiceConfig.Domain.DEV,
-                "sha256/*="
-            )
+//            Pair(
+//                WebServiceConfig.Domain.DEV,
+//                "sha256/*="
+//            ),
+//            Pair(
+//                WebServiceConfig.Domain.DEV,
+//                "sha256/*="
+//            ),
+//            Pair(
+//                WebServiceConfig.Domain.DEV,
+//                "sha256/*="
+//            )
         )
     )
 }

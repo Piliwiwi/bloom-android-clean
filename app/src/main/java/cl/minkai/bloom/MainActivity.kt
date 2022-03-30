@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import cl.minkai.bloom.databinding.ActivityMainBinding
+import cl.minkai.bloom.login.ui.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,10 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -53,5 +51,19 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        userIntentHandler()
+    }
+
+    fun userIntentHandler() {
+        binding.appBarMain.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Me voy a otra actividad", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+            val intent = LoginActivity.makeIntent(this)
+            startActivity(intent)
+        }
     }
 }

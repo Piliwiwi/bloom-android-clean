@@ -29,12 +29,12 @@ class RemoteWebService<TRetrofitWebService> {
         val okHttpClient = makeOkHttpClient(
             httpLoggingInterceptor = makeLoggingInterceptor(remoteWebServiceParams.config.isDebug),
             interceptorParams = remoteWebServiceParams.interceptor,
-            hostnameVerifier = makeHostNameVerifier(
-                bloomHostName = remoteWebServiceParams.securityVerification.bloomHostName
-            ),
-            certificatePinner = makeCertificatePinner(
-                remoteWebServiceParams.securityVerification.pinCertificates
-            )
+//            hostnameVerifier = makeHostNameVerifier(
+//                bloomHostName = remoteWebServiceParams.securityVerification.bloomHostName
+//            ),
+//            certificatePinner = makeCertificatePinner(
+//                remoteWebServiceParams.securityVerification.pinCertificates
+//            )
         )
         return createRetrofit(
             okHttpClient = okHttpClient,
@@ -46,17 +46,17 @@ class RemoteWebService<TRetrofitWebService> {
     private fun makeOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
         interceptorParams: InterceptorParams,
-        hostnameVerifier: HostnameVerifier,
-        certificatePinner: CertificatePinner
+//        hostnameVerifier: HostnameVerifier,
+//        certificatePinner: CertificatePinner
     ): OkHttpClient = if (interceptorParams.dynamicBaseUrlInterceptor == null) {
         OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
             .addInterceptor(interceptorParams.tokenInterceptor)
             .addNetworkInterceptor(interceptorParams.unauthorizedInterceptor)
             .socketFactory(SocketFactory.getDefault())
-            .hostnameVerifier(hostnameVerifier)
+//            .hostnameVerifier(hostnameVerifier)
             .connectTimeout(WebServiceConfig.Timeout.CONNECT, TimeUnit.SECONDS)
-            .certificatePinner(certificatePinner)
+//            .certificatePinner(certificatePinner)
             .build()
     } else {
         OkHttpClient.Builder()
@@ -65,10 +65,10 @@ class RemoteWebService<TRetrofitWebService> {
             .addInterceptor(interceptorParams.dynamicBaseUrlInterceptor)
             .addNetworkInterceptor(interceptorParams.unauthorizedInterceptor)
             .socketFactory(SocketFactory.getDefault())
-            .hostnameVerifier(hostnameVerifier)
+//            .hostnameVerifier(hostnameVerifier)
             .connectTimeout(WebServiceConfig.Timeout.CONNECT, TimeUnit.SECONDS)
             .readTimeout(WebServiceConfig.Timeout.READ, TimeUnit.SECONDS)
-            .certificatePinner(certificatePinner)
+//            .certificatePinner(certificatePinner)
             .build()
     }
 
