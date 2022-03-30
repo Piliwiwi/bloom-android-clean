@@ -1,0 +1,185 @@
+ext {
+    //Android
+    androidBuildToolsVersion = "29.0.3"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 29
+    androidCompileSdkVersion = 29
+
+    kotlinVersion = '1.4.21'
+    firebaseCrashlyticsGradle = '2.4.1'
+    gradlePluginAndroidVersion = '4.1.1'
+    jacocoVersion = "0.8.6"
+    javaVersion = JavaVersion.VERSION_1_8
+    jFrogVersion = "4.17.0"
+    googleServicesVersion = '4.3.4'
+
+    //Libraries
+    appCompatVersion = "1.1.0"
+    archCoreVersion = '2.0.0'
+    biometricVersion = '1.0.0-rc01'
+    butterKnifeVersion = '10.1.0'
+    calligraphyVersion = '3.1.1'
+    canvasCoreVersion = '3.8.2'
+    cardViewVersion = '1.0.0'
+    constraintLayoutVersion = '1.1.3'
+    coreKtxVersion = '1.3.1'
+    coroutinesVersion = "1.4.2"
+    daggerVersion = '2.23.1'
+    dataStorePreferencesVersion = "1.0.0-alpha01"
+    featureFlagsVersion = '1.0.0'
+    firebaseAnalyticsVersion = '17.5.0'
+    firebaseBoMVersion = '26.2.0'
+    firebaseCrashlyticsVersion = '17.2.1'
+    firebaseMessagingVersion = '19.0.1'
+    firebasePerformanceVersion = '19.0.11'
+    firebasePerfPluginVersion = '1.3.4'
+    firebaseVersion = '17.5.0'
+    flexboxVersion = '1.1.0'
+    fragmentVersion = '1.2.5'
+    glideVersion = '4.11.0'
+    launchdarklyVersion = '2.11.0'
+    legacySupportVersion = "1.0.0"
+    lifecycleVersion = '2.2.0'
+    liveDataVersion = '2.2.0'
+    lottieVersion = '3.3.1'
+    materialVersion = '1.1.0'
+    medalliaVersion = '3.5.0'
+    navigationVersion = '2.1.1'
+    okHttpVersion = '4.9.0'
+    playServiceVisionVersion = '20.1.2'
+    recyclerViewVersion = '1.0.0'
+    retrofitVersion = '2.9.0'
+    rootBeerVersion = '0.0.8'
+    rxAndroidVersion = '2.1.0'
+    rxKotlinVersion = '2.3.0'
+    rxJavaVersion = '2.1.1'
+    sonarQubeVersion = "2.8"
+    statsVersion = '17.0.0'
+    swipeRefreshLayoutVersion = '1.1.0'
+    tagmanagerVersion = '17.0.0'
+    timberVersion = '4.7.1'
+    safetynetVersion = '17.0.0'
+    utilsVersion = '1.1.0-alpha03'
+    viewpumpVersion = '2.0.3'
+    workManagerVersion = '2.2.0'
+
+    //Testing
+    coroutinesTestVersion = "1.4.2"
+    espressoCoreVersion = '3.3.0'
+    extJUnitVersion = '1.1.2'
+    extTruthVersion = '1.3.0'
+    jUnitVersion = '4.12'
+    mockitoVersion = '2.15.0'
+    mockitoKotlinVersion = '2.0.0'
+    mockkVersion = '1.9.3'
+    robolectricVersion = '4.3'
+    testCoreVersion = '1.3.0'
+    testRulesVersion = "1.3.0"
+    testRunnerVersion = "1.3.0"
+    testingToolsVersion = '1.2.0-alpha02'
+
+    //Tools
+    firebaseCrashlyticsGradle = "com.google.firebase:firebase-crashlytics-gradle:$firebaseCrashlyticsGradle"
+    firebasePerformancePlugin = "com.google.firebase:perf-plugin:$firebasePerfPluginVersion"
+    gradlePluginAndroid = "com.android.tools.build:gradle:$gradlePluginAndroidVersion"
+    googleServices = "com.google.gms:google-services:$googleServicesVersion"
+    jacocoCore = "org.jacoco:org.jacoco.core:$jacocoVersion"
+    jFrogGradle = "org.jfrog.buildinfo:build-info-extractor-gradle:$jFrogVersion"
+    kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    safeArgsPlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+    sonarQubeGradlePlugin = "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$sonarQubeVersion"
+
+    //URL Repositories
+    artifactoryUrl = "http://artifactory.devops.chl.bns/artifactory/remote-bns/"
+    httpComponentsClient = "https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient"
+    medalliaUrl = "https://repository.medallia.com/digital-maven/"
+
+    //Dependencies
+    appCompat = "androidx.appcompat:appcompat:$appCompatVersion"
+    biometric = "androidx.biometric:biometric:$biometricVersion"
+    cardView = "androidx.cardview:cardview:$cardViewVersion"
+    constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
+    coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"
+    daggerAndroidSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
+    dataSorePreferences = "androidx.datastore:datastore-preferences:$dataStorePreferencesVersion"
+    firebaseAnalytics = "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+    firebaseBoM = "com.google.firebase:firebase-bom:$firebaseBoMVersion"
+    firebaseCrashlytics = "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
+    firebaseCore = "com.google.firebase:firebase-core:$firebaseVersion"
+    firebaseMessaging = "com.google.firebase:firebase-messaging:$firebaseMessagingVersion"
+    firebasePerformance = "com.google.firebase:firebase-perf-ktx:$firebasePerformanceVersion"
+    flexbox = "com.google.android:flexbox:$flexboxVersion"
+    fragmentKtx = "androidx.fragment:fragment-ktx:$fragmentVersion"
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    launchdarkly = "com.launchdarkly:launchdarkly-android-client-sdk:$launchdarklyVersion"
+    legacySupport = "androidx.legacy:legacy-support-v4:$legacySupportVersion"
+    lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    lifecycleLiveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:$liveDataVersion"
+    lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime:$lifecycleVersion"
+    lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    lottie = "com.airbnb.android:lottie:$lottieVersion"
+    material = "com.google.android.material:material:$materialVersion"
+    medallia = "com.medallia.digital.mobilesdk:android-sdk:$medalliaVersion"
+    navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    okHttp = "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    playServiceVision = "com.google.android.gms:play-services-vision:$playServiceVisionVersion"
+    recyclerView = "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    retrofitConverterGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    retrofitAdapterRxJava = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    retrofitConverterScalars = "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    rootBeer = "com.scottyab:rootbeer-lib:$rootBeerVersion"
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    rxJava = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    rxKotlin = "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+    safetynet = "com.google.android.gms:play-services-safetynet:$safetynetVersion"
+    swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
+    timber = "com.jakewharton.timber:timber:$timberVersion"
+    workManager = "androidx.work:work-runtime-ktx:$workManagerVersion"
+
+    // Compiler dependencies
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+    daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
+    glideCompiler = "com.github.bumptech.glide:compiler:$glideVersion"
+    lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
+
+    //Test Dependencies
+    archCoreTesting = "androidx.arch.core:core-testing:$archCoreVersion"
+    coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2"
+    espressoCore = "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    espressoContrib = "androidx.test.espresso:espresso-contrib:$espressoCoreVersion"
+    espressoIntents = "androidx.test.espresso:espresso-intents:$espressoCoreVersion"
+    extJUnit = "androidx.test.ext:junit:$extJUnitVersion"
+    extTruth = "androidx.test.ext:truth:$extTruthVersion"
+    fragment = "androidx.fragment:fragment:$fragmentVersion"
+    fragmentTesting = "androidx.fragment:fragment-testing:$fragmentVersion"
+    jUnit = "junit:junit:$jUnitVersion"
+    mockitoCore = "org.mockito:mockito-core:$mockitoVersion"
+    mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    mockk = "io.mockk:mockk:$mockkVersion"
+    robolectric = "org.robolectric:robolectric:$robolectricVersion"
+    testCore = "androidx.test:core:$testCoreVersion"
+    testRules = "androidx.test:rules:$testRulesVersion"
+    testRunner = "androidx.test:runner:$testRunnerVersion"
+
+    appDependencies = [
+            butterKnife:            "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler:    "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            tagmanager:             "com.google.android.gms:play-services-tagmanager:${tagmanagerVersion}"
+    ]
+
+    coreDependencies = [
+            butterKnife:        "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler:"com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            calligraphy:        "io.github.inflationx:calligraphy3:${calligraphyVersion}",
+            viewpump:           "io.github.inflationx:viewpump:${viewpumpVersion}",
+            stats:              "com.google.android.gms:play-services-stats:${statsVersion}"
+    ]
+}
