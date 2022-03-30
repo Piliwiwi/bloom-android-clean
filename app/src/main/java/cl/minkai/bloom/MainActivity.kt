@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         userIntentHandler()
     }
 
-    fun userIntentHandler() {
+    private fun userIntentHandler() {
         binding.appBarMain.fab.setOnClickListener { view ->
             Snackbar.make(view, "Me voy a otra actividad", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
