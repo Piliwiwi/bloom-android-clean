@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
                 tokenInterceptor = TokenInterceptor(tokenManager),
                 unauthorizedInterceptor = AnyInterceptor()
             ),
-            flavorName = "prod",
+            flavorName = "dummy",
             isDebug = BuildConfig.DEBUG,
             context = requireContext()
         )
