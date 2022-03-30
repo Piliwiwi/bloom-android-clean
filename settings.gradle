@@ -8,3 +8,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Bloom"
 include ':app'
+include ':network'
+include ':utils'
+include ':uicomponents'
