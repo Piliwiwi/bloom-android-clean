@@ -17,7 +17,6 @@ import cl.minkai.bloom.login.presentation.login.LoginUIntent
 import cl.minkai.bloom.login.presentation.login.LoginUIntent.InitialUIntent
 import cl.minkai.bloom.login.presentation.login.LoginUIntent.LoggingUIntent
 import cl.minkai.bloom.login.presentation.login.LoginUiEffect
-import cl.minkai.bloom.login.presentation.login.LoginUiEffect.InvalidCredentialsUiEffect
 import cl.minkai.bloom.login.presentation.login.LoginUiEffect.LoginSucceedUiEffect
 import cl.minkai.bloom.login.presentation.login.LoginUiEffect.NetworkErrorUiEffect
 import cl.minkai.bloom.login.presentation.login.LoginUiState

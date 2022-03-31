@@ -9,9 +9,8 @@ import cl.minkai.network.interceptor.TokenInterceptor
 import cl.minkai.network.security.TokenManager
 
 object NetworkDependenciesFactory {
-    fun makeNetworkDependencies(context: Context, tokenManager: TokenManager): NetworkDependencies {
-
-        return NetworkDependencies(
+    fun makeNetworkDependencies(context: Context, tokenManager: TokenManager): NetworkDependencies =
+        NetworkDependencies(
             interceptorParams = InterceptorParams(
                 tokenInterceptor = TokenInterceptor(tokenManager),
                 unauthorizedInterceptor = AnyInterceptor()
@@ -20,5 +19,4 @@ object NetworkDependenciesFactory {
             isDebug = BuildConfig.DEBUG,
             context = context
         )
-    }
 }
