@@ -19,8 +19,13 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
         }
     }
     compileOptions {
@@ -32,6 +37,36 @@ android {
     }
     buildFeatures {
         viewBinding true
+    }
+
+    flavorDimensions "tier"
+    productFlavors {
+        prod {
+            applicationIdSuffix = ".minkai"
+            resValue "string", "app_name", "Bloom"
+            dimension "tier"
+        }
+
+        stag {
+            applicationIdSuffix = ".stag"
+            versionNameSuffix = "-stag"
+            resValue "string", "app_name", "BloomStaging"
+            dimension "tier"
+        }
+
+        dev {
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue "string", "app_name", "BloomDev"
+            dimension "tier"
+        }
+
+        dummy {
+            applicationIdSuffix = ".dummy"
+            versionNameSuffix = "-dummy"
+            resValue "string", "app_name", "BloomDummy"
+            dimension "tier"
+        }
     }
 }
 
@@ -57,6 +92,6 @@ dependencies {
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    
+
     kapt rootProject.daggerCompiler
 }

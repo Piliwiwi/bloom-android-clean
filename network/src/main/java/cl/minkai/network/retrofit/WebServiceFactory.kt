@@ -23,6 +23,12 @@ class WebServiceFactory<TWebService> constructor(
                 hostName = WebServiceConfig.Domain.DEV,
                 pinCertificates = PinCertificates.Dev.certificates
             )
+
+            Environment.Stag.name -> createRemoteWebServiceConfig(
+                baseUrl = WebServiceConfig.Url.STAG_HOST,
+                hostName = WebServiceConfig.Domain.STAG,
+                pinCertificates = PinCertificates.Prod.certificates
+            )
             Environment.Prod.name -> createRemoteWebServiceConfig(
                 baseUrl = WebServiceConfig.Url.PROD_HOST,
                 hostName = WebServiceConfig.Domain.PROD,
