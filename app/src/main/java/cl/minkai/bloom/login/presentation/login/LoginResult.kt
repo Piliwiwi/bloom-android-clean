@@ -8,7 +8,6 @@ sealed class LoginResult : MviResult {
 
     sealed class HandLeLoginResult : LoginResult() {
         object InProgress : HandLeLoginResult()
-        object InvalidCredentials : HandLeLoginResult()
         data class APIError(val error: NetworkError) : HandLeLoginResult()
         data class Success(val token: String) : HandLeLoginResult()
     }

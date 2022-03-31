@@ -1,9 +1,8 @@
 package cl.minkai.bloom.login.presentation.login
 
 import cl.minkai.bloom.login.presentation.login.LoginResult.GoToForgotPasswordResult
-import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.InProgress
-import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.InvalidCredentials
 import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.APIError
+import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.InProgress
 import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.Success
 import cl.minkai.bloom.login.presentation.login.LoginResult.RenderUiResult
 import cl.minkai.bloom.login.presentation.login.LoginUiState.DefaultUiState
@@ -32,7 +31,6 @@ class LoginReducer @Inject constructor() : MviReducer<LoginUiState, LoginResult>
     infix fun LoadingUiState.reduceWith(result: LoginResult): LoginUiState {
         return when (result) {
             is Success -> ShowLoginScreenUiState
-            InvalidCredentials -> ShowLoginScreenUiState
             is APIError -> ShowLoginScreenUiState
             else -> throw UnsupportedReduceException(this, result)
         }

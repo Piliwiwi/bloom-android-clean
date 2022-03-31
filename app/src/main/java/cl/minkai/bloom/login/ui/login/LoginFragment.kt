@@ -137,14 +137,9 @@ class LoginFragment : Fragment(),
 
     override fun handleEffect(uiEffect: LoginUiEffect) {
         when (uiEffect) {
-            InvalidCredentialsUiEffect -> showInvalidCredentialsSnackBar()
             is NetworkErrorUiEffect -> showNetworkErrorSnackBar(uiEffect.error)
             is LoginSucceedUiEffect -> login(uiEffect.token)
         }
-    }
-
-    private fun showInvalidCredentialsSnackBar() = view?.apply {
-        Snackbar.make(this, "Credenciales invalidas, tonta", Snackbar.LENGTH_SHORT).show()
     }
 
     private fun showNetworkErrorSnackBar(error: NetworkError) = view?.apply {
