@@ -118,7 +118,7 @@ class LoginFragment : Fragment(),
                 LoggingUIntent(
                     UserCredentials(
                         email = "arech.pg@gmail.com",
-                        password = "14234"
+                        password = "1234"
                     )
                 )
             )

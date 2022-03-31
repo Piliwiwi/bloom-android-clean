@@ -1,4 +1,4 @@
-package cl.minkai.bloom.ui.home
+package cl.minkai.bloom.home.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

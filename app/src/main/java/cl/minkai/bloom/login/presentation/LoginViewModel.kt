@@ -8,7 +8,6 @@ import cl.minkai.bloom.login.presentation.login.LoginProcessor
 import cl.minkai.bloom.login.presentation.login.LoginReducer
 import cl.minkai.bloom.login.presentation.login.LoginResult
 import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.APIError
-import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.InvalidCredentials
 import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.Success
 import cl.minkai.bloom.login.presentation.login.LoginUIntent
 import cl.minkai.bloom.login.presentation.login.LoginUIntent.ForgotPasswordUIntent
@@ -66,7 +65,6 @@ class LoginViewModel @Inject constructor(
     private fun Flow<LoginResult>.handleEffect(): Flow<LoginResult> =
         onEach { change ->
             val event = when (change) {
-                InvalidCredentials -> InvalidCredentialsUiEffect
                 is APIError -> NetworkErrorUiEffect(change.error)
                 is Success -> LoginSucceedUiEffect(change.token)
                 else -> return@onEach
