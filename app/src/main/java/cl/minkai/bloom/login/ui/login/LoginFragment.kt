@@ -1,31 +1,44 @@
 package cl.minkai.bloom.login.ui.login
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import cl.minkai.bloom.BloomApplication
 import cl.minkai.bloom.databinding.FragmentLoginBinding
-import cl.minkai.bloom.common.factory.NetworkDependenciesFactory
 import cl.minkai.bloom.login.data.LoginDataRepository
-import cl.minkai.bloom.login.data.cache.LoginCacheImpl
-import cl.minkai.bloom.login.data.remote.LoginRemoteImpl
 import cl.minkai.bloom.login.data.remote.model.UserCredentialsParams
-import cl.minkai.bloom.login.data.remote.retrofit.LoginWebServiceAPI
-import cl.minkai.network.retrofit.WebServiceFactory
-import cl.minkai.network.security.PassportTokenManager
-import cl.minkai.utils.factory.SharedPreferencesFactory
+import cl.minkai.bloom.login.di.DaggerLoginComponent
+import cl.minkai.bloom.login.di.FragmentModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@ExperimentalCoroutinesApi
+@FlowPreview
 class LoginFragment : Fragment() {
     private var binding: FragmentLoginBinding? = null
 
+    @Inject
+    lateinit var repository: LoginDataRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setupInjection()
+    }
+
+    private fun setupInjection() {
+        val component = (this.activity?.applicationContext as BloomApplication).appComponent
+        DaggerLoginComponent.builder()
+            .applicationComponent(component)
+            .fragmentModule(FragmentModule(parentFragmentManager, lifecycle))
+            .build()
+            .inject(this)
     }
 
     override fun onCreateView(
@@ -45,19 +58,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun pruebas() {
-        val sharedPreferences = SharedPreferencesFactory.makeGeneralSharedPreferences(requireContext())
-        val tokenManager = PassportTokenManager(sharedPreferences)
-        val dependencies = NetworkDependenciesFactory.makeNetworkDependencies(requireContext(), tokenManager)
-        val webService = WebServiceFactory(
-            tClass = LoginWebServiceAPI::class.java,
-            context = dependencies.context,
-            isDebug = dependencies.isDebug,
-            interceptorParams = dependencies.interceptorParams
-        ).createWebServiceInstance(dependencies.flavorName)
-        val remote = LoginRemoteImpl(webService)
-
-        val cache = LoginCacheImpl(tokenManager)
-        val repository = LoginDataRepository(remote, cache)
         CoroutineScope(Dispatchers.IO).launch {
             repository.login(
                 UserCredentialsParams(

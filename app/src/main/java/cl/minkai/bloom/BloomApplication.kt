@@ -4,16 +4,15 @@ import android.app.Application
 import cl.minkai.bloom.common.di.ApplicationComponent
 import cl.minkai.bloom.common.di.DaggerApplicationComponent
 
-class BloomApplication : BaseApplication() {
-    private var applicationComponent: ApplicationComponent? = null
-
-    override fun onPrepareApplication() {
-        TODO("Not yet implemented")
+class BloomApplication : Application() {
+    val appComponent: ApplicationComponent by lazy {
+        initializeComponent()
     }
 
-    override fun onInjectApplication() {
-//        applicationComponent = DaggerApplicationComponent.builder().
-    }
-
-
+    private fun initializeComponent(): ApplicationComponent = DaggerApplicationComponent
+        .factory()
+        .create(
+            application = this,
+            context = applicationContext
+        )
 }

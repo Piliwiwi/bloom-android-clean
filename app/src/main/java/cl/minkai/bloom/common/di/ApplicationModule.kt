@@ -1,49 +1,37 @@
 package cl.minkai.bloom.common.di
 
-import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import cl.minkai.bloom.common.factory.NetworkDependenciesFactory
 import cl.minkai.mvi.execution.AppExecutionThread
 import cl.minkai.mvi.execution.ExecutionThread
+import cl.minkai.network.config.NetworkDependencies
 import cl.minkai.network.security.PassportTokenManager
 import cl.minkai.utils.factory.SharedPreferencesFactory
 import dagger.Module
 import dagger.Provides
 
 @Module
-abstract class ApplicationModule {
+class ApplicationModule {
+//
+//    @Provides
+//    fun providesApplication(): Application = app
+//
+//    @Provides
+//    fun providesContext(): Context = app
 
-    @Module
-    companion object {
-        private var application: Application? = null
+    @Provides
+    fun providesExecutionThread(): ExecutionThread = AppExecutionThread()
 
-        fun setApplication(app: Application) {
-            application = app
-        }
+    @Provides
+    fun providesGeneralSharedPreferences(context: Context): SharedPreferences =
+        SharedPreferencesFactory.makeGeneralSharedPreferences(context)
 
-        @Provides
-        @JvmStatic
-        fun providesApplication(): Application = application!!
+    @Provides
+    fun providesPassportTokenManager(context: Context): PassportTokenManager =
+        PassportTokenManager(providesGeneralSharedPreferences(context))
 
-
-        @Provides
-        @JvmStatic
-        fun providesContext(): Context = application!!
-
-        @Provides
-        @JvmStatic
-        fun providesExecutionThread(): ExecutionThread = AppExecutionThread()
-
-        @Provides
-        @JvmStatic
-        fun providesGeneralSharedPreferences(): SharedPreferences =
-            SharedPreferencesFactory.makeGeneralSharedPreferences(
-                application!!
-            )
-
-        @Provides
-        @JvmStatic
-        fun providesPassportTokenManager(): PassportTokenManager =
-            PassportTokenManager(providesGeneralSharedPreferences())
-    }
+    @Provides
+    fun providesNetWorkDependencies(context: Context, passportManager: PassportTokenManager): NetworkDependencies =
+        NetworkDependenciesFactory.makeNetworkDependencies(context, passportManager)
 }
