@@ -1,18 +1,19 @@
 package cl.minkai.bloom.login.presentation.login
 
+import cl.minkai.bloom.common.Config.GENERIC_NETWORK_ERROR_MESSAGE
 import cl.minkai.bloom.login.data.LoginDataRepository
 import cl.minkai.bloom.login.presentation.login.LoginAction.GoToForgotPasswordAction
 import cl.minkai.bloom.login.presentation.login.LoginAction.HandleLoginAction
 import cl.minkai.bloom.login.presentation.login.LoginAction.RenderUiAction
 import cl.minkai.bloom.login.presentation.login.LoginResult.GoToForgotPasswordResult
-import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.InProgress
 import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.APIError
+import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.InProgress
 import cl.minkai.bloom.login.presentation.login.LoginResult.HandLeLoginResult.Success
 import cl.minkai.bloom.login.presentation.login.LoginResult.RenderUiResult
 import cl.minkai.bloom.login.presentation.login.mapper.CredentialsMapper
 import cl.minkai.bloom.login.presentation.login.model.UserCredentials
 import cl.minkai.mvi.execution.ExecutionThread
-import cl.minkai.utils.model.NetworkError
+import cl.minkai.network.utils.NetworkErrorHandler
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -26,6 +27,7 @@ import javax.inject.Inject
 class LoginProcessor @Inject constructor(
     private val repository: LoginDataRepository,
     private val mapper: CredentialsMapper,
+    private val errorHandler: NetworkErrorHandler,
     private val executionThread: ExecutionThread
 ) {
     fun actionProcessor(action: LoginAction): Flow<LoginResult> =
@@ -46,7 +48,8 @@ class LoginProcessor @Inject constructor(
     }.onStart {
         emit(InProgress)
     }.catch { cause ->
-        emit(APIError(NetworkError(message = cause.message.orEmpty())))
+        emit(APIError(with(errorHandler) { cause.toNetworkError(GENERIC_NETWORK_ERROR_MESSAGE) }))
+
     }.flowOn(executionThread.ioThread())
 
     private fun goToForgotPassword() = flow<LoginResult> {

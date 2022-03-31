@@ -1,7 +1,7 @@
 package cl.minkai.bloom.login.presentation.login
 
 import cl.minkai.mvi.events.MviResult
-import cl.minkai.utils.model.NetworkError
+import cl.minkai.network.utils.NetworkError
 
 sealed class LoginResult : MviResult {
     object RenderUiResult : LoginResult()

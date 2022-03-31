@@ -7,19 +7,13 @@ import cl.minkai.mvi.execution.AppExecutionThread
 import cl.minkai.mvi.execution.ExecutionThread
 import cl.minkai.network.config.NetworkDependencies
 import cl.minkai.network.security.PassportTokenManager
+import cl.minkai.network.utils.NetworkErrorHandler
 import cl.minkai.utils.factory.SharedPreferencesFactory
 import dagger.Module
 import dagger.Provides
 
 @Module
 class ApplicationModule {
-//
-//    @Provides
-//    fun providesApplication(): Application = app
-//
-//    @Provides
-//    fun providesContext(): Context = app
-
     @Provides
     fun providesExecutionThread(): ExecutionThread = AppExecutionThread()
 
@@ -32,6 +26,12 @@ class ApplicationModule {
         PassportTokenManager(providesGeneralSharedPreferences(context))
 
     @Provides
-    fun providesNetWorkDependencies(context: Context, passportManager: PassportTokenManager): NetworkDependencies =
+    fun providesNetWorkDependencies(
+        context: Context,
+        passportManager: PassportTokenManager
+    ): NetworkDependencies =
         NetworkDependenciesFactory.makeNetworkDependencies(context, passportManager)
+
+    @Provides
+    fun providesNetworkErrorHandler(): NetworkErrorHandler = NetworkErrorHandler()
 }

@@ -15,6 +15,7 @@ import kotlinx.coroutines.FlowPreview
     modules = [
         RemoteModule::class,
         CacheModule::class,
+        PresentationModule::class,
         FragmentModule::class
     ],
     dependencies = [ApplicationComponent::class]
