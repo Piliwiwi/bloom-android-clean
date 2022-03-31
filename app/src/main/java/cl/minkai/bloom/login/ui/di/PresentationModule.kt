@@ -1,4 +1,4 @@
-package cl.minkai.bloom.login.di
+package cl.minkai.bloom.login.ui.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

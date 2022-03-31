@@ -1,4 +1,4 @@
-package cl.minkai.bloom.login.di
+package cl.minkai.bloom.login.ui.di
 
 import cl.minkai.bloom.login.data.cache.LoginCacheImpl
 import cl.minkai.bloom.login.data.source.LoginCache

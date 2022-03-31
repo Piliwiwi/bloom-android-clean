@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import cl.minkai.bloom.BloomApplication
 import cl.minkai.bloom.databinding.FragmentLoginBinding
-import cl.minkai.bloom.login.di.DaggerLoginComponent
-import cl.minkai.bloom.login.di.FragmentModule
+import cl.minkai.bloom.login.ui.di.DaggerLoginComponent
+import cl.minkai.bloom.login.ui.di.FragmentModule
 import cl.minkai.bloom.login.presentation.LoginViewModel
 import cl.minkai.bloom.login.presentation.login.LoginUIntent
 import cl.minkai.bloom.login.presentation.login.LoginUIntent.InitialUIntent

@@ -1,6 +1,5 @@
-package cl.minkai.bloom.login.di
+package cl.minkai.bloom.login.ui.di
 
-import cl.minkai.bloom.common.factory.NetworkDependenciesFactory
 import cl.minkai.bloom.login.data.remote.LoginRemoteImpl
 import cl.minkai.bloom.login.data.remote.retrofit.LoginWebServiceAPI
 import cl.minkai.bloom.login.data.source.LoginRemote
