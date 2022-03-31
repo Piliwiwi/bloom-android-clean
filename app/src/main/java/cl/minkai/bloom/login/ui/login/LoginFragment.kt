@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import cl.minkai.bloom.BloomApplication
 import cl.minkai.bloom.databinding.FragmentLoginBinding
 import cl.minkai.bloom.login.data.LoginDataRepository
-import cl.minkai.bloom.login.data.remote.model.UserCredentialsParams
+import cl.minkai.bloom.login.data.remote.model.RemoteUserCredentialsParams
 import cl.minkai.bloom.login.di.DaggerLoginComponent
 import cl.minkai.bloom.login.di.FragmentModule
 import kotlinx.coroutines.CoroutineScope
@@ -60,7 +60,7 @@ class LoginFragment : Fragment() {
     private fun pruebas() {
         CoroutineScope(Dispatchers.IO).launch {
             repository.login(
-                UserCredentialsParams(
+                RemoteUserCredentialsParams(
                     email = "arech.pg@gmail.com",
                     password = "1234",
                     getHash = true
