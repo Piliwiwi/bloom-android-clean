@@ -6,7 +6,7 @@
     android:padding="36dp">
 
     <TextView
-        android:id="@+id/texto"
+        android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -20,5 +20,11 @@
         android:layout_height="66dp"
         android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <cl.minkai.uicomponents.component.Loader
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

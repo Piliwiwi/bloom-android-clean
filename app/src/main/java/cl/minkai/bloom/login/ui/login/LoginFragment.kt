@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -102,6 +103,7 @@ class LoginFragment : Fragment(),
     }
 
     override fun renderUiStates(uiStates: LoginUiState) {
+        hideAll()
         when (uiStates) {
             ShowLoginScreenUiState -> showLoginScreen()
             LoadingUiState -> showLoading()
@@ -110,11 +112,20 @@ class LoginFragment : Fragment(),
         }
     }
 
+    private fun hideAll() = binding?.apply {
+        label.isVisible = false
+        btnLogin.isVisible = false
+        loader.isVisible = false
+    }
+
     private fun showLoginScreen() = binding?.apply {
-        texto.text = userToken ?: "HOLA BIENVENIDO AL LOGIN :D"
+        showContent()
+        /* For testing purposes */
+        label.text = userToken ?: "HOLA BIENVENIDO AL LOGIN :D"
         btnLogin.setOnClickListener {
             emit(
                 LoggingUIntent(
+                    /* For testing purposes */
                     UserCredentials(
                         email = "arech.pg@gmail.com",
                         password = "1234"
@@ -124,6 +135,11 @@ class LoginFragment : Fragment(),
         }
     }
 
+    private fun showContent() = binding?.apply {
+        label.isVisible = true
+        btnLogin.isVisible = true
+    }
+
     private fun emit(intent: LoginUIntent) {
         viewLifecycleOwner.lifecycleScope.launch {
             userIntents.emit(intent)
@@ -131,7 +147,7 @@ class LoginFragment : Fragment(),
     }
 
     private fun showLoading() = binding?.apply {
-        texto.text = "LOADING..."
+        loader.isVisible = true
     }
 
     override fun handleEffect(uiEffect: LoginUiEffect) {

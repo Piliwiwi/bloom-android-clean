@@ -76,6 +76,7 @@ android {
 }
 
 dependencies {
+    implementation project(':uicomponents')
     implementation project(':network')
     implementation project(':di')
     implementation project(':mvi')
