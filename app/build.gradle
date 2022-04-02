@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -91,6 +92,8 @@ dependencies {
     implementation rootProject.retrofit
     implementation rootProject.retrofitConverterGson
     implementation rootProject.dagger
+    implementation rootProject.firebaseAnalytics
+    implementation rootProject.firebaseCrashlytics
 
     testImplementation rootProject.mockk
     testImplementation rootProject.jUnit5
