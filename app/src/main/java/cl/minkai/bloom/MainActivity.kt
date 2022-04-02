@@ -1,5 +1,7 @@
 package cl.minkai.bloom
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -62,5 +64,9 @@ class MainActivity : AppCompatActivity() {
             val intent = LoginActivity.makeIntent(this)
             startActivity(intent)
         }
+    }
+
+    companion object {
+        fun makeIntent(context: Context) = Intent(context, MainActivity::class.java)
     }
 }

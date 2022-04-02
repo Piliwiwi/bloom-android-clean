@@ -16,6 +16,18 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="LoadTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorOnPrimary">?attr/colorPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="backgroundColor">?attr/colorPrimary</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <style name="Theme.Bloom.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.Bloom.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
