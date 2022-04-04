@@ -65,6 +65,35 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:833507220683:android:b7436238d56e0e72790f4e",
+        "android_client_info": {
+          "package_name": "cl.minkai.bloom.dummy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833507220683-gp5av6leqe7esgdl0vuomaavkd4isinp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBi_TnPLPQ44tFJpTZsWRD2PnNc74tM4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833507220683-gp5av6leqe7esgdl0vuomaavkd4isinp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:833507220683:android:7cf1785dd4cc8764790f4e",
         "android_client_info": {
           "package_name": "cl.minkai.bloom.stag"

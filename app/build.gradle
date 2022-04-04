@@ -96,6 +96,7 @@ dependencies {
     implementation rootProject.dagger
     implementation rootProject.firebaseAnalytics
     implementation rootProject.firebaseCrashlytics
+    implementation rootProject.firebaseConfig
     implementation rootProject.firebaseBoM
 
     testImplementation rootProject.mockk
