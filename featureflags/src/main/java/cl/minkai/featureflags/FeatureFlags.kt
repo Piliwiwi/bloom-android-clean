@@ -1,4 +1,4 @@
-package cl.minkai.bloom.common.featureflags
+package cl.minkai.featureflags
 
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.ktx.remoteConfig

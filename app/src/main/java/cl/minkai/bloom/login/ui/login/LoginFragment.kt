@@ -10,8 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import cl.minkai.bloom.BloomApplication
-import cl.minkai.bloom.common.featureflags.FeatureFlags
-import cl.minkai.bloom.common.featureflags.FeatureFlags.StringValues.EXAMPLE_STRING
+import cl.minkai.featureflags.FeatureFlags
+import cl.minkai.featureflags.FeatureFlags.StringValues.EXAMPLE_STRING
 import cl.minkai.bloom.databinding.FragmentLoginBinding
 import cl.minkai.bloom.login.ui.di.DaggerLoginComponent
 import cl.minkai.bloom.login.ui.di.FragmentModule
@@ -30,8 +30,6 @@ import cl.minkai.mvi.MviUi
 import cl.minkai.mvi.MviUiEffect
 import cl.minkai.network.utils.NetworkError
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.remoteconfig.ktx.remoteConfig
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
@@ -125,7 +123,7 @@ class LoginFragment : Fragment(),
     private fun showLoginScreen() = binding?.apply {
         showContent()
         /* For testing purposes */
-        label.text = userToken ?: "HOLA BIENVENIDO AL LOGIN :D \n featureFlag: ${FeatureFlags.getFlag(EXAMPLE_STRING)}"
+        label.text = userToken ?: "HOLA BIENVENIDO AL LOGIN :D \n featureFlag: ${cl.minkai.featureflags.FeatureFlags.getFlag(EXAMPLE_STRING)}"
         btnLogin.setOnClickListener {
             emit(
                 LoggingUIntent(

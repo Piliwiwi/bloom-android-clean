@@ -83,6 +83,7 @@ dependencies {
     implementation project(':di')
     implementation project(':mvi')
     implementation project(':utils')
+    implementation project(':featureflags')
     implementation project(':testingtools')
 
     implementation rootProject.coreKtx
