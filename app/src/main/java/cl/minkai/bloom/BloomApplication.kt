@@ -20,8 +20,8 @@ class BloomApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        cl.minkai.featureflags.FirebaseRemoteConfig.initRemoteConfig(
-            cl.minkai.featureflags.FeatureFlags.getDefaults(),
+        FirebaseRemoteConfig.initRemoteConfig(
+            FeatureFlags.getDefaults(),
             BuildConfig.DEBUG
         )
     }
