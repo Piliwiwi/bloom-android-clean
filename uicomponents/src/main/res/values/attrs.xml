@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitledButton">
+        <attr name="ui_type" format="enum">
+            <enum name="primary" value="1" />
+            <enum name="secondary" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

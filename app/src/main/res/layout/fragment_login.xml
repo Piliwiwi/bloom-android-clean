@@ -14,11 +14,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <cl.minkai.uicomponents.component.button.TitledButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="66dp"
-        android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <cl.minkai.uicomponents.component.Loader

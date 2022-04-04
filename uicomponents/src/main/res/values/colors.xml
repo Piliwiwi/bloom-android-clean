@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ui_primary_color">#345E92</color>
+    <color name="ui_primary_color_dark">#204571</color>
+    <color name="ui_secondary_color">#52BDCD</color>
+    <color name="ui_secondary_color_dark">#357E8D</color>
+    <color name="ui_white_transparent">#A1FFFFFF</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

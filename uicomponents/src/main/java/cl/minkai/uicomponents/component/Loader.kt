@@ -8,7 +8,7 @@ import cl.minkai.uicomponents.databinding.UiComponentLoaderBinding
 
 class Loader @JvmOverloads constructor(
     context: Context,
-    val attrs: AttributeSet? = null,
+    attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     private var binding: UiComponentLoaderBinding? = null

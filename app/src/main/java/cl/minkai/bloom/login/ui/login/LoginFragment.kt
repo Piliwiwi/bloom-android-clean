@@ -29,6 +29,7 @@ import cl.minkai.bloom.login.presentation.login.model.UserCredentials
 import cl.minkai.mvi.MviUi
 import cl.minkai.mvi.MviUiEffect
 import cl.minkai.network.utils.NetworkError
+import cl.minkai.uicomponents.component.button.AttrsTitledButton
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -124,17 +125,24 @@ class LoginFragment : Fragment(),
         showContent()
         /* For testing purposes */
         label.text = userToken ?: "HOLA BIENVENIDO AL LOGIN :D \n featureFlag: ${cl.minkai.featureflags.FeatureFlags.getFlag(EXAMPLE_STRING)}"
-        btnLogin.setOnClickListener {
-            emit(
-                LoggingUIntent(
-                    /* For testing purposes */
-                    UserCredentials(
-                        email = "arech.pg@gmail.com",
-                        password = "1234"
+
+        /* For testing purposes */
+        btnLogin.setAttributes(
+            AttrsTitledButton(
+                buttonText = "Login",
+                onClick = {
+                    emit(
+                        LoggingUIntent(
+                            /* For testing purposes */
+                            UserCredentials(
+                                email = "arech.pg@gmail.com",
+                                password = "1234"
+                            )
+                        )
                     )
-                )
+                }
             )
-        }
+        )
     }
 
     private fun showContent() = binding?.apply {
