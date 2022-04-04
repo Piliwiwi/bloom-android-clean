@@ -88,6 +88,7 @@ dependencies {
     implementation rootProject.coreKtx
     implementation rootProject.appCompat
     implementation rootProject.constraintLayout
+    implementation rootProject.playCore
     implementation rootProject.navigationFragment
     implementation rootProject.navigationUi
     implementation rootProject.retrofit

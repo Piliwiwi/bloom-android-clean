@@ -47,11 +47,15 @@ class LoadScreenTemplate @JvmOverloads constructor(
         icon.alpha = 0f
         icon
             .animate()
-            .setDuration(attrs.animationDuration ?: LoadScreen.APPEARANCE_DURATION)
+            .setDuration(attrs.animationDuration ?: APPEARANCE_DURATION)
             .alpha(1f)
             .withEndAction {
                 attrs.onLoadEnd()
                 activityEvent()
             }
+    }
+
+    companion object {
+        const val APPEARANCE_DURATION = 200L
     }
 }
