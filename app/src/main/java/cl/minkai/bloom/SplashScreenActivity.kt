@@ -11,6 +11,10 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        startApp()
+    }
+
+    private fun startApp() {
         val intent = MainActivity.makeIntent(this)
         startActivity(intent)
         finish()

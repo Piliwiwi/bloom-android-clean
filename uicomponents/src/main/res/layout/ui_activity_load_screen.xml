@@ -3,14 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
-    tools:context=".LoadScreenActivity">
+    android:background="@color/purple_500">
 
-    <ImageView
-        android:id="@+id/icon"
+    <cl.minkai.uicomponents.activity.loadscreen.LoadScreenTemplate
+        android:id="@+id/screen"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/ic_launcher_foreground" />
-
+        android:layout_height="match_parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
