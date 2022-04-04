@@ -6,4 +6,11 @@
             <enum name="secondary" value="2" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="BloomInputText">
+        <attr name="ui_input_type" format="enum">
+            <enum name="email" value="1" />
+            <enum name="password" value="2" />
+        </attr>
+    </declare-styleable>
 </resources>

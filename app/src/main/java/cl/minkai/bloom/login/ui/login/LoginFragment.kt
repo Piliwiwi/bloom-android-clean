@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import cl.minkai.bloom.BloomApplication
-import cl.minkai.featureflags.FeatureFlags
 import cl.minkai.featureflags.FeatureFlags.StringValues.EXAMPLE_STRING
 import cl.minkai.bloom.databinding.FragmentLoginBinding
 import cl.minkai.bloom.login.ui.di.DaggerLoginComponent
@@ -29,7 +28,8 @@ import cl.minkai.bloom.login.presentation.login.model.UserCredentials
 import cl.minkai.mvi.MviUi
 import cl.minkai.mvi.MviUiEffect
 import cl.minkai.network.utils.NetworkError
-import cl.minkai.uicomponents.component.button.AttrsTitledButton
+import cl.minkai.uicomponents.component.buttons.AttrsTitledButton
+import cl.minkai.uicomponents.component.inputs.AttrsInputText
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -41,6 +41,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import org.w3c.dom.Attr
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi

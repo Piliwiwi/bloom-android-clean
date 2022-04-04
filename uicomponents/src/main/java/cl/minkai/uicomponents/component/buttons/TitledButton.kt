@@ -1,4 +1,4 @@
-package cl.minkai.uicomponents.component.button
+package cl.minkai.uicomponents.component.buttons
 
 import android.content.Context
 import android.util.AttributeSet
@@ -16,7 +16,7 @@ data class AttrsTitledButton(
 
 class TitledButton @JvmOverloads constructor(
     context: Context,
-    val attrs: AttributeSet? = null,
+    private val attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     private var binding: UiComponentTitledButtonBinding? = null
