@@ -53,7 +53,7 @@ class AuthBottomSheet(private val attrs: AttrsAuthBottomSheet) : BottomSheetDial
             AttrsTitledButton(
                 buttonText = context?.getString(attrs.buttonText).orEmpty(),
                 onClick = {
-                    if (email.hasTypedError())
+                    if (email.hasTypedError().not())
                         attrs.onButtonClick(email.getText(), password.getText())
                 }
             )
