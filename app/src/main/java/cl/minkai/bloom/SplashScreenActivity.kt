@@ -52,7 +52,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(requestCode, resultCode, data) //TODO: use new activityResult
         if (requestCode == REQUEST_CODE && resultCode == RESULT_CANCELED) finish()
     }
 

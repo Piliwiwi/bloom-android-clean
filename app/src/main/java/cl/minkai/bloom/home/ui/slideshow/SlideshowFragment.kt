@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cl.minkai.bloom.databinding.FragmentSlideshowBinding
 
+/* TODO: Prefabricated Fragment, delete later */
 class SlideshowFragment : Fragment() {
 
     private lateinit var slideshowViewModel: SlideshowViewModel

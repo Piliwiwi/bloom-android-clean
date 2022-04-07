@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+/* TODO: Prefabricated ViewModel, delete later */
 class SlideshowViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {

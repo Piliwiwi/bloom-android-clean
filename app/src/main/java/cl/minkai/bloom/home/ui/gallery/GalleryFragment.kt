@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cl.minkai.bloom.databinding.FragmentGalleryBinding
 
+/* TODO: Prefabricated Fragment, delete later */
 class GalleryFragment : Fragment() {
 
     private lateinit var galleryViewModel: GalleryViewModel

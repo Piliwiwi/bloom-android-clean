@@ -120,6 +120,7 @@ class LoginFragment : Fragment(),
         loader.isVisible = false
     }
 
+    /* TODO: Testing method for now */
     private fun showLoginScreen() = binding?.apply {
         showContent()
         /* For testing purposes */

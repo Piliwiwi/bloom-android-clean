@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.minkai.bloom.databinding.ActivityMainBinding
 import cl.minkai.bloom.login.ui.LoginActivity
 
+/* TODO: Prefabricated Activity, delete later */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

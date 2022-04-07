@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cl.minkai.bloom.databinding.FragmentHomeBinding
 
+/* TODO: Prefabricated Fragment, delete later */
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
