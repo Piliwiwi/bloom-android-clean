@@ -3,4 +3,7 @@
     <string name="email">Correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="invalid_email">Correo electrónico inválido</string>
+    <string name="you_log_in">Inicia sesión</string>
+    <string name="log_in">Iniciar sesión</string>
+    <string name="forgot_my_password">Olvidé mi contraseña</string>
 </resources>

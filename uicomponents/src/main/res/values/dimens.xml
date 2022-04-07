@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="ui_dimen_16sp">16sp</dimen>
+    <dimen name="ui_dimen_34sp">34sp</dimen>
     <dimen name="ui_dimen_60dp">60dp</dimen>
 </resources>

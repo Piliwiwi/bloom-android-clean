@@ -101,6 +101,8 @@ class BloomInputText @JvmOverloads constructor(
 
     fun getText() = finalText
 
+    fun hasTypedError() = typedError?.isError == true
+
     private fun setTexts(attrs: AttrsInputText) = binding?.apply {
         if (attrs.hint.isNotEmpty()) layout.hint = attrs.hint
         if (attrs.helperText.isNotEmpty()) layout.helperText = attrs.helperText

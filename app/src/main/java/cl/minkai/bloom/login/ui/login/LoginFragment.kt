@@ -17,19 +17,18 @@ import cl.minkai.bloom.login.ui.di.FragmentModule
 import cl.minkai.bloom.login.presentation.LoginViewModel
 import cl.minkai.bloom.login.presentation.login.LoginUIntent
 import cl.minkai.bloom.login.presentation.login.LoginUIntent.InitialUIntent
-import cl.minkai.bloom.login.presentation.login.LoginUIntent.LoggingUIntent
 import cl.minkai.bloom.login.presentation.login.LoginUiEffect
 import cl.minkai.bloom.login.presentation.login.LoginUiEffect.LoginSucceedUiEffect
 import cl.minkai.bloom.login.presentation.login.LoginUiEffect.NetworkErrorUiEffect
 import cl.minkai.bloom.login.presentation.login.LoginUiState
 import cl.minkai.bloom.login.presentation.login.LoginUiState.LoadingUiState
 import cl.minkai.bloom.login.presentation.login.LoginUiState.ShowLoginScreenUiState
-import cl.minkai.bloom.login.presentation.login.model.UserCredentials
 import cl.minkai.mvi.MviUi
 import cl.minkai.mvi.MviUiEffect
 import cl.minkai.network.utils.NetworkError
 import cl.minkai.uicomponents.component.buttons.AttrsTitledButton
-import cl.minkai.uicomponents.component.inputs.AttrsInputText
+import cl.minkai.uicomponents.groupcomponent.bottomsheets.AttrsAuthBottomSheet
+import cl.minkai.uicomponents.groupcomponent.bottomsheets.AuthBottomSheet
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -41,7 +40,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import org.w3c.dom.Attr
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
@@ -132,15 +130,19 @@ class LoginFragment : Fragment(),
             AttrsTitledButton(
                 buttonText = "Login",
                 onClick = {
-                    emit(
-                        LoggingUIntent(
-                            /* For testing purposes */
-                            UserCredentials(
-                                email = "arech.pg@gmail.com",
-                                password = "1234"
-                            )
-                        )
-                    )
+                    AuthBottomSheet(AttrsAuthBottomSheet(
+                        onForgotClick = { println("Olvide mi contraseña") },
+                        onButtonClick = {email, pass -> println("email: $email, pass: $pass") }
+                    )).show(parentFragmentManager, "asdf")
+//                    emit(
+//                        LoggingUIntent(
+//                            /* For testing purposes */
+//                            UserCredentials(
+//                                email = "arech.pg@gmail.com",
+//                                password = "1234"
+//                            )
+//                        )
+//                    )
                 }
             )
         )

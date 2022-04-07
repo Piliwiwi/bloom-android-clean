@@ -14,13 +14,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <cl.minkai.uicomponents.component.inputs.BloomInputText
-        android:id="@+id/input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:ui_input_type="email"
-        app:layout_constraintTop_toBottomOf="@id/label" />
-
     <cl.minkai.uicomponents.component.buttons.TitledButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
